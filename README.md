@@ -1,80 +1,68 @@
-# Module Project: Forms - Team Builder
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored Form management in React. You learned about controled inputs, semantic HTML, some ES6 tools like the spread operator and computer properties, and synthetic events. In your project you will demonstrate proficiency of these subjects and principles by creating an application using each of these.
+## Available Scripts
 
-## Instructions
+In the project directory, you can run:
 
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this project.**
+### `npm start`
 
-### Commits
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Commit your code regularly and meaningfully. This helps both you and your team lead in case you ever need to return to old code for any number of reasons.
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-### Description
+### `npm test`
 
-In this project you'll build an app that will keep track of memebers of a team. You'll be able to add members to this team as well as edit their details.
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Project Set Up
+### `npm run build`
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] CD into the project base directory `cd american-football-scoreboard`
-- [ ] Download project dependencies by running one of these two commands `yarn` or `npm install`
-- [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Follow these steps for completing your project.
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Minimum Viable Product
+### `npm run eject`
 
-- [ ] Render a list of team members from state
-- [ ] Build a form to add a new member to the list of members
-- [ ] Add the functionality to edit team members
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### STEP 1 - Setup your state
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Import the `useState` hook
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-- Render your list of team members
+## Learn More
 
-### STEP 2 - Build your form
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- In `Form.js` build out your markup
-- Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination)
-- Import the useState hook and utilize what we learned about two-way data binding
-- Render your `Form` component in `App` and pass a setter method (the `set_____` method from your team members state in `App`) down to it so you can add team members to your state.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### STEP 3 - Add the edit functionality
+### Code Splitting
 
-Next we're going to reuse the `Form` component to edit team members
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-- Update `Form.js` to take a prop called `memberToEdit`
-- Create a function in `App.js` that will edit one or more of the details of a team member and pass it down to the second form component
-- In the `initialState` that you are passing into the state hooks for your inputs, you'll want to write logic that checks to see if `props.memberToEdit` exists and pass that in as the `initialState`, otherwise pass in empty data. (This will populate the inputs if we are trying to edit a member, and keep it blank if we are just trying to add a new member)
-- You'll have to find a way to loop over the data in your state, find the specific team member you intend to edit, and finally change the details with the data sent up to you from the second form component. `.map()` will be your friend for that task. You'll also want to avoid directly mutating your data. The `...` spread operator will be your friend there
+### Analyzing the Bundle Size
 
-### STEP 4 - Form submit
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-This is an interesting bit of architecture we've done so far. We have built a reusable form that can be used to add a team member, or edit a team member. The last piece of the puzzle is this - when we submit the form, do we run an `addMember` function, or an `editMember` function? And how will the form know? Well, our form knows if we are editing a team member by whether or not there is the prop `memberToEdit`. So, when submitting the form, do an `if` check to see if that prop is there or not, and run the correct function based in the `if` block and the `else` block.
+### Making a Progressive Web App
 
-Observe the power of reusability!
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-## Stretch Problems
+### Advanced Configuration
 
-After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-- Build another layer of your App so that you can keep track of multiple teams, each with their own encapsulated list of team members.
+### Deployment
 
-- Look into the various strategies around form validation. What happens if you try to enter a number as a team-members name? Does your App allow for that? Should it? What happens if you try and enter a function as the value to one of your fields? How could this be dangerous? How might you prevent it?
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-- Style the forms. There are some subtle browser defaults for input tags that might need to be overwritten based on their state (active, focus, hover, etc.); Keep those CSS skill sharp.
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
